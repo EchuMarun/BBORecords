@@ -220,6 +220,14 @@
         <p>© BBO Records — San Jerónimo Sud</p>
     </footer>
 
+    <a class="whatsapp-float" href="https://wa.me/543415766772" target="_blank" rel="noopener"
+        aria-label="Ir a WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path
+                d="M19.1 17.3c-.3-.2-1.7-.8-2-1s-.5-.2-.8.2-.9 1-.1 1.2 1.5.7 2.5 1c1 .3 1.7.3 2.3-.4.6-.7 1-1.1 1.2-1.5.2-.4.1-.6-.2-.8-.2-.2-1.4-.7-2.1-.9-.2-.1-.3-.1-.4 0-.1.1-.3.2-.5.4-.2.2-.4.4-.5.4-.2 0-.8-.3-1.5-.9-.6-.6-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4.1-.1.2-.3.3-.4.1-.1.2-.2.3-.3.1-.1.1-.3 0-.5-.1-.2-.7-1.6-1-2.2-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.4 2.9 1.3 2.9.9 3.4.8.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.2-.2-.5-.3zM16 3.3c-7 0-12.7 5.7-12.7 12.7 0 2.2.6 4.3 1.7 6.2L3.2 29l7-1.8c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3.3 16 3.3zm0 22.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.2-.4c-1-1.7-1.5-3.6-1.5-5.6 0-5.9 4.8-10.7 10.7-10.7S26.7 9.4 26.7 15.3 21.9 26 16 26z" />
+        </svg>
+    </a>
+
     <!-- SCRIPTS (ordenados y juntos) -->
     <script>
         // Dropdown "Producciones" (click móvil + cerrar afuera)
@@ -361,6 +369,19 @@
 
             setBackgrounds();
             setInterval(setBackgrounds, 7000);
+        })();
+
+        // WhatsApp flotante (aparece al scrollear)
+        (function () {
+            const wa = document.querySelector(".whatsapp-float");
+            if (!wa) return;
+
+            const toggle = () => {
+                wa.classList.toggle("show", window.scrollY > 200);
+            };
+
+            window.addEventListener("scroll", toggle, { passive: true });
+            toggle();
         })();
     </script>
 
