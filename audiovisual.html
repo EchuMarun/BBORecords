@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBO Records — Producciones audiovisuales</title>
+    <link rel="icon" href="img/logobbo.png?v=1" type="image/png" />
+    <link rel="shortcut icon" href="img/logobbo.png?v=1" type="image/png" />
+    <link rel="apple-touch-icon" href="img/logobbo.png?v=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="home">
+
+    <header class="site-header">
+        <nav class="nav">
+            <div class="brand">
+                <img src="img/logobbo.png" alt="BBO Records logo" class="logo" />
+                <div class="brand-lines" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#estudio">El estudio</a>
+                <a href="index.html#contacto">Contacto</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn" type="button" aria-expanded="false">
+                        Producciones <span class="caret">&#9662;</span>
+                    </button>
+
+                    <div class="dropdown-menu" role="menu">
+                        <a href="producciones.html">Producciones</a>
+                        <a href="audiovisual.html">Producciones audiovisuales</a>
+                        <a href="bateria.html">Producciones de batería</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <div class="section-head">
+                <h2>Trabajos</h2>
+                <div class="divider" aria-hidden="true"><span></span><span></span></div>
+            </div>
+
+            <div class="videos-grid">
+                <!-- Pegá acá tus iframes de YouTube -->
+                <article class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/uSO4naX5hXE?start=5" title="Producción audiovisual 1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Artista / Tema</h3>
+                        <p>Grabación y mezcla — BBO Records</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/4AE0iMF6n5E?start=2" title="Producción audiovisual 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Apycal Funk - Lucho Valfoca</h3>
+                        <p>Producción y mastering — BBO Records</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+      
+    </main>
+
+    <footer class="footer">
+        <div class="footer-lines" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <p>© BBO Records — San Jerónimo Sud</p>
+    </footer>
+    <script>
+        // Dropdown "Producciones"
+        (function () {
+            const dropdown = document.querySelector(".dropdown");
+            if (!dropdown) return;
+
+            const btn = dropdown.querySelector(".dropbtn");
+            const menu = dropdown.querySelector(".dropdown-menu");
+
+            const closeDropdown = () => {
+                dropdown.classList.remove("open");
+                btn.setAttribute("aria-expanded", "false");
+            };
+
+            const openDropdown = () => {
+                dropdown.classList.add("open");
+                btn.setAttribute("aria-expanded", "true");
+            };
+
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdown.classList.contains("open") ? closeDropdown() : openDropdown();
+            });
+
+            menu.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target)) closeDropdown();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeDropdown();
+            });
+
+            window.addEventListener("resize", () => closeDropdown());
+        })();
+
+        // Fondos laterales rotativos
+         (function () {
+        const left = [
+            "img/bg-left-1.jpeg",
+            "img/bg-left-2.jpeg",
+            "img/bg-left-3.jpeg",
+            "img/bg-left-4.jpeg",
+            "img/bg-left-5.jpeg",
+        ];
+
+        const right = [
+            "img/bg-right-1.jpeg",
+            "img/bg-right-2.jpeg",
+            "img/bg-right-3.jpeg",
+            "img/bg-right-4.jpeg",
+        ];
+
+        let i = 0;
+
+        function setBackgrounds() {
+            document.body.style.setProperty(
+                "--bg-left",
+                `url("${left[i % left.length]}")`
+            );
+            document.body.style.setProperty(
+                "--bg-right",
+                `url("${right[i % right.length]}")`
+            );
+            i++;
+        }
+
+        setBackgrounds();
+        setInterval(setBackgrounds, 7000);
+    })();
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBO Records — Producciones de batería</title>
+    <link rel="icon" href="img/logobbo.png?v=1" type="image/png" />
+    <link rel="shortcut icon" href="img/logobbo.png?v=1" type="image/png" />
+    <link rel="apple-touch-icon" href="img/logobbo.png?v=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="home">
+
+    <header class="site-header">
+        <nav class="nav">
+            <div class="brand">
+                <img src="img/logobbo.png" alt="BBO Records logo" class="logo" />
+                <div class="brand-lines" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#estudio">El estudio</a>
+                <a href="index.html#contacto">Contacto</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn" type="button" aria-expanded="false">
+                        Producciones <span class="caret">&#9662;</span>
+                    </button>
+
+                    <div class="dropdown-menu" role="menu">
+                        <a href="producciones.html">Producciones</a>
+                        <a href="audiovisual.html">Producciones audiovisuales</a>
+                        <a href="bateria.html">Producciones de batería</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <div class="section-head">
+                <h2>Qué ofrecemos</h2>
+                <div class="divider" aria-hidden="true"><span></span><span></span></div>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Grabación</h3>
+                    <p>Setups de microfoneo y ruteo para un sonido sólido.</p>
+                </div>
+                <div class="card">
+                    <h3>Edición</h3>
+                    <p>Timing, limpieza, comping y cuantización cuidada.</p>
+                </div>
+                <div class="card">
+                    <h3>Mezcla</h3>
+                    <p>Balance, pegada y coherencia con el resto del tema.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <h2>Ejemplos</h2>
+                <div class="divider" aria-hidden="true"><span></span><span></span></div>
+            </div>
+
+            <p>Acá podés poner links a audios, videos o embeds de YouTube/Spotify.</p>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="section-head">
+                <h2>Contacto</h2>
+                <div class="divider" aria-hidden="true"><span></span><span></span></div>
+            </div>
+            <div class="contact">
+                <div class="contact-box">
+                    <p><strong>Instagram:</strong> @bbo.records</p>
+                    <p><strong>WhatsApp:</strong> 341-5766772</p>
+                    <p><strong>Lugar:</strong> San Jerónimo Sud</p>
+                </div>
+
+                <div class="contact-box map-box" aria-label="Mapa de ubicación">
+                    <iframe class="map-embed"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248.13943124264708!2d-61.024487977426006!3d-32.87964643072257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sar!4v1770184216490!5m2!1ses!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="contact-box">
+                    <p>Escribinos y coordinamos fecha.</p>
+                    <a class="btn" href="https://wa.me/543415766772" target="_blank" rel="noopener">
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-lines" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <p>© BBO Records — San Jerónimo Sud</p>
+    </footer>
+    <script>
+        // Dropdown "Producciones"
+        (function () {
+            const dropdown = document.querySelector(".dropdown");
+            if (!dropdown) return;
+
+            const btn = dropdown.querySelector(".dropbtn");
+            const menu = dropdown.querySelector(".dropdown-menu");
+
+            const closeDropdown = () => {
+                dropdown.classList.remove("open");
+                btn.setAttribute("aria-expanded", "false");
+            };
+
+            const openDropdown = () => {
+                dropdown.classList.add("open");
+                btn.setAttribute("aria-expanded", "true");
+            };
+
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdown.classList.contains("open") ? closeDropdown() : openDropdown();
+            });
+
+            menu.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target)) closeDropdown();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeDropdown();
+            });
+
+            window.addEventListener("resize", () => closeDropdown());
+        })();
+
+        // Fondos laterales rotativos
+           (function () {
+        const left = [
+            "img/bg-left-1.jpeg",
+            "img/bg-left-2.jpeg",
+            "img/bg-left-3.jpeg",
+            "img/bg-left-4.jpeg",
+            "img/bg-left-5.jpeg",
+        ];
+
+        const right = [
+            "img/bg-right-1.jpeg",
+            "img/bg-right-2.jpeg",
+            "img/bg-right-3.jpeg",
+            "img/bg-right-4.jpeg",
+        ];
+
+        let i = 0;
+
+        function setBackgrounds() {
+            document.body.style.setProperty(
+                "--bg-left",
+                `url("${left[i % left.length]}")`
+            );
+            document.body.style.setProperty(
+                "--bg-right",
+                `url("${right[i % right.length]}")`
+            );
+            i++;
+        }
+
+        setBackgrounds();
+        setInterval(setBackgrounds, 7000);
+    })();
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
