@@ -760,12 +760,38 @@ footer {
 }
 
 
-/* En móvil lo apagamos para que no moleste */
+/* En tablet/móvil mantenemos el fondo lateral, pero más sutil */
 @media (max-width: 900px) {
-
   body.home::before,
   body.home::after {
-    display: none;
+    width: 180px;
+    opacity: 0.18;
+    filter: blur(2px) saturate(1.1) contrast(1.05);
+  }
+
+  .section {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .card,
+  .service-card,
+  .video-card,
+  .work-item,
+  .carousel-viewport {
+    background: rgba(0, 0, 0, 0.18);
+  }
+}
+
+@media (max-width: 600px) {
+  body.home::before,
+  body.home::after {
+    width: 120px;
+    opacity: 0.16;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(0, 0, 0, 0.28);
   }
 }
 
