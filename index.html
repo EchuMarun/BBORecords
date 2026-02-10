@@ -13,7 +13,7 @@
 
 <body class="home">
 
-    <!-- HEADER / NAV -->
+ 
     <header class="site-header">
         <nav class="nav">
             <div class="brand">
@@ -40,7 +40,7 @@
             </div>
         </nav>
 
-        <!-- HERO -->
+    
         <section class="hero">
             <div class="hero-content">
                 <p class="hero-kicker">Producción · Grabación · Mezcla · Masterización</p>
@@ -58,10 +58,9 @@
         </section>
     </header>
 
-    <!-- MAIN -->
+  
     <main class="container">
 
-        <!-- INTRO + CARRUSEL -->
         <section id="estudio" class="section">
             <div class="section-head">
                 <h2 class="section-title-pro">El estudio</h2>
@@ -90,7 +89,7 @@
 
                 <div class="carousel-viewport">
                     <div class="carousel-track">
-                        <!-- 16 FOTOS (ordenadas + intercalando dos-tachos) -->
+                
                         <img src="img/compu-izquierda-lejos.jpeg" alt="Estudio BBO Records - compu izquierda lejos"
                             class="carousel-slide" />
                         <img src="img/bata-arriba.jpeg" alt="Estudio BBO Records - batería arriba"
@@ -123,12 +122,12 @@
 
                 <button class="carousel-btn next" type="button" aria-label="Foto siguiente">&#8250;</button>
 
-                <!-- Dots: ahora los crea el JS automáticamente -->
+           
                 <div class="carousel-dots" role="tablist" aria-label="Selector de fotos"></div>
             </div>
         </section>
 
-        <!-- RESUMEN SERVICIOS -->
+      
         <section class="section">
             <div class="section-head">
                 <h2>Qué hacemos</h2>
@@ -156,7 +155,7 @@
 
         </section>
 
-        <!-- CONTACTO -->
+    
         <section id="contacto" class="section">
             <div class="section-head">
                 <h2>Contacto</h2>
@@ -212,7 +211,7 @@
 
     </main>
 
-    <!-- FOOTER -->
+  
     <footer class="footer">
         <div class="footer-lines" aria-hidden="true">
             <span></span><span></span><span></span><span></span>
@@ -228,9 +227,8 @@
         </svg>
     </a>
 
-    <!-- SCRIPTS (ordenados y juntos) -->
+    
     <script>
-        // Dropdown "Producciones" (click móvil + cerrar afuera)
         (function () {
             const dropdown = document.querySelector(".dropdown");
             if (!dropdown) return;
@@ -266,7 +264,6 @@
             window.addEventListener("resize", () => closeDropdown());
         })();
 
-        // Carrusel (con dots automáticos)
         (function () {
             const carousel = document.querySelector(".carousel");
             if (!carousel) return;
@@ -277,7 +274,7 @@
             const nextBtn = carousel.querySelector(".carousel-btn.next");
             const dotsWrap = carousel.querySelector(".carousel-dots");
 
-            // crear dots según cantidad de slides
+        
             dotsWrap.innerHTML = "";
             const dots = slides.map((_, i) => {
                 const b = document.createElement("button");
@@ -304,7 +301,7 @@
             nextBtn.addEventListener("click", () => goTo(index + 1));
             dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
 
-            // Autoplay cada 3.5s
+           
             const autoplayMs = 3500;
             let autoplayId = setInterval(() => goTo(index + 1), autoplayMs);
 
@@ -318,7 +315,7 @@
                 el.addEventListener("click", pauseAutoplay);
             });
 
-            // Swipe móvil
+        
             let startX = null;
             carousel.addEventListener("touchstart", (e) => {
                 startX = e.touches[0].clientX;
@@ -336,7 +333,7 @@
             update();
         })();
 
-        // Fondos laterales rotativos (index)
+ 
         (function () {
             const left = [
                 "img/bg-left-1.jpeg",
@@ -371,7 +368,7 @@
             setInterval(setBackgrounds, 7000);
         })();
 
-        // WhatsApp flotante (aparece al scrollear)
+      
         (function () {
             const wa = document.querySelector(".whatsapp-float");
             if (!wa) return;
